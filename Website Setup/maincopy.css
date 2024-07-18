@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #26b8c2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    /* background-image: linear-gradient(135deg, #2f95dc 0%, #87ceeb 100%); */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.days{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+/* .container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+} */
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.weather, .temp-details, .days {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px; /* Adjust padding as needed */
+}
+
+.weather-icon {
+    max-width: 100%;
+    height: auto;
+}
+.days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header .last-updated {
+    margin: 0;
+    font-size: 1em;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video is behind other content */
+}
+
+.location {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); /* Custom gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.weather-widget {
+    /* background: linear-gradient(135deg, #2f95dc 0%, #87ceeb 100%); */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 75%; /* 3/4 of the page */
+    max-width: 1200px;
+    color: #fff; /* Ensure text is visible against the gradient */
+}
+#current-weather-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video is behind other content */
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2); /* Slightly darken background for readability */
+    color: #fff;
+    position: relative;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    left: 20px;
+    top: 40px;
+    border-radius: 70%;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+.day{
+    font-size: 3em; /* Match the size from the provided example */
+    letter-spacing: 5px;
+    color: #045166;
+    outline: none ;
+    font-weight: bold;
+}
+.temp {
+    font-size: 6em; /* Match the size from the provided example */
+    letter-spacing: 5px;
+    color: #0e3742;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #1c738c;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+                     0 0 20px #03bcf4,
+                     0 0 40px #03bcf4,
+                     0 0 80px #03bcf4,
+                     0 0 160px #03bcf4;
+    }
+}
+
+
+.temp-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.temp {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.location {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.extra-details {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.extra-details > div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* Adjust margin to create equal spacing */
+}
+
+.icon-small {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.forecast {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Lighten background for forecast section */
+    color: #333; /* Dark text for readability */
+}
+
+.hourly {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hour {
+    text-align: center;
+    font-size: 16px;
+}
+.legend-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    color: #333; /* Dark text for readability */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.legend-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.legend-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend-box li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-box img {
+    width: 24px; /* Same size as your icons */
+    height: 24px;
+    margin-right: 10px;
+}
